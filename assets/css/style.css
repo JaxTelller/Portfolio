@@ -1,0 +1,976 @@
+/**
+* Template Name: Day - v4.5.0
+* Template URL: https://bootstrapmade.com/day-multipurpose-html-template-for-free/
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+  font-family: 'Libre Baskerville', serif;
+  color: #444444;    
+}
+p{
+    line-height: 1.6;
+}
+
+a {
+  color: #1B998B;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #e82d2d;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Spartan', sans-serif;
+}
+  svg {
+  width: 10%;
+  height: 10%;
+}
+
+.center-object{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 250px;
+}
+.justify-text{
+   text-align: justify;
+}
+.center {
+margin: auto;
+width: 50%;
+padding: 10px;
+}
+.rightform {
+  position: absolute;
+  right: 0px;
+  padding: 10px;
+}
+
+#forma {
+    position: relative; 
+
+}
+
+#price{
+    color: #1B998B;
+    font-size: 25px;
+}
+
+.contact-text{
+	color: #fff;
+	padding: 10px;
+}
+
+ #process ol {
+   list-style: none;
+   counter-reset: item;
+   columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+  list-style-position: outside;
+;
+ }
+ #process li {
+   counter-increment: item;
+   margin-bottom: 5px;
+ }
+ #process li:before {
+   content: counter(item);
+   color: #1B998B;
+   width: 1.2em;
+   font-weight: bold;
+   text-align: center;
+   display: inline-block;
+ }
+/*--------------------------------------------------------------
+# datepicker
+--------------------------------------------------------------*/
+/* Bootstrap css */
+@import "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css";
+
+/* Google Material icons */
+@import "http://fonts.googleapis.com/icon?family=Material+Icons";
+
+/* Propeller css */
+@import "dist/css/propeller.min.css";
+
+/* Bootstrap datetimepicker */
+@import "datetimepicker/css/bootstrap-datetimepicker.css";
+
+/* Propeller datetimepicker */
+@import "datetimepicker/css/pmd-datetimepicker.css";
+
+/*Datepicker end*/
+
+
+/*--------------------------------------------------------------
+# Radio
+--------------------------------------------------------------*/
+	        .control {
+            font-family: 'Libre Baskerville', serif;
+            position: relative;
+            padding-left: 30px;
+			padding-right: 10px;
+            margin-bottom: 5px;
+            padding-top: 3px;
+            cursor: pointer;
+            font-size: 16px;
+			color: #fff;
+        }
+            .control input {
+                position: absolute;
+                z-index: -1;
+                opacity: 0;
+            }
+        .control_indicator {
+            position: absolute;
+            top: 4px;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            background: #e6e6e6;
+            border: 0px solid #000000;
+            border-radius: undefinedpx;
+        }
+        .control:hover input ~ .control_indicator,
+        .control input:focus ~ .control_indicator {
+            background: #cccccc;
+        }
+        
+        .control input:checked ~ .control_indicator {
+            background: #1B998B;
+        }
+        .control:hover input:not([disabled]):checked ~ .control_indicator,
+        .control input:checked:focus ~ .control_indicator {
+            background: #0e6647d;
+        }
+        .control input:disabled ~ .control_indicator {
+            background: #e6e6e6;
+            opacity: 2;
+            pointer-events: none;
+        }
+        .control_indicator:after {
+            box-sizing: unset;
+            content: '';
+            position: absolute;
+            display: none;
+        }
+        .control input:checked ~ .control_indicator:after {
+            display: block;
+        }
+        .control-radio .control_indicator {
+            border-radius: 50%;
+        }
+        
+        .control-radio .control_indicator:after {
+            left: 7px;
+            top: 7px;
+            height: 6px;
+            width: 6px;
+            border-radius: 50%;
+            background: #ffffff;
+            transition: background 150ms;
+        }
+        .control-radio input:disabled ~ .control_indicator:after {
+            background: #7b7b7b;
+        }.control-radio .control_indicator::before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4.5rem;
+            height: 4.5rem;
+            margin-left: -1.6rem;
+            margin-top: -1.6rem;
+            background: #1B998B;
+            border-radius: 3rem;
+            opacity: 0.6;
+            z-index: 99999;
+            transform: scale(0);
+        }
+        @keyframes s-ripple {
+            0% {
+                opacity: 0;
+                transform: scale(0);
+            }
+            20% {
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0.01;
+                transform: scale(1);
+            }
+        }
+        @keyframes s-ripple-dup {
+           0% {
+               transform: scale(0);
+            }
+           30% {
+                transform: scale(1);
+            }
+            60% {
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(1);
+            }
+        }
+        .control-radio input + .control_indicator::before {
+            animation: s-ripple 150ms ease-out;
+        }
+        .control-radio input:checked + .control_indicator::before {
+            animation-name: s-ripple-dup;
+        }	
+/* radio end */
+
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 34px;
+  bottom: 20px;
+  z-index: 996;
+  background: #1B998B;
+  width: 40px;
+  height: 40px;
+  transition: all 0.4s;
+}
+.back-to-top i {
+  font-size: 28px;
+  color: #fff;
+  line-height: 0;
+}
+.back-to-top:hover {
+  background: #0e5049;
+  color: #fff;
+}
+.back-to-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  overflow: hidden;
+  background: #fff;
+}
+
+#preloader:before {
+  content: "";
+  position: fixed;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  border: 6px solid #1B998B;
+  border-top-color: #efefef;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  -webkit-animation: animate-preloader 1s linear infinite;
+  animation: animate-preloader 1s linear infinite;
+}
+
+@-webkit-keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/*--------------------------------------------------------------
+# Disable aos animation delay on mobile devices
+--------------------------------------------------------------*/
+@media screen and (max-width: 991px) {
+  [data-aos-delay] {
+    transition-delay: 0 !important;
+  }
+}
+/*--------------------------------------------------------------
+# Top Bar
+--------------------------------------------------------------*/
+#topbar {
+  background: #0E1116;
+  font-size: 15px;
+  height: 40px;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.6);
+}
+#topbar .contact-info a {
+  line-height: 0;
+  color: rgba(255, 255, 255, 0.6);
+  transition: 0.3s;
+}
+#topbar .contact-info a:hover {
+  color: #fff;
+}
+#topbar .contact-info i {
+  color: #1B998B;
+  line-height: 0;
+  margin-right: 5px;
+}
+#topbar .contact-info .phone-icon {
+  margin-left: 15px;
+}
+#topbar .social-links a {
+  color: rgba(255, 255, 255, 0.6);
+  padding: 4px 12px;
+  display: inline-block;
+  line-height: 1px;
+  transition: 0.3s;
+}
+#topbar .social-links a:hover {
+  color: #fff;
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+  background: rgba(25, 25, 25, 0.95);
+  transition: all 0.5s;
+  z-index: 997;
+  height: 70px;
+}
+#header.fixed-top {
+  background: #0E1116;
+}
+#header .logo {
+  font-size: 30px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+#header .logo a {
+  color: #fff;
+}
+#header .logo img {
+  max-height: 40px;
+}
+
+.scrolled-offset {
+  margin-top: 70px;
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/**
+* Desktop Navigation 
+*/
+.navbar {
+  padding: 0;
+  text-align: center;
+}
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+.navbar li {
+  position: relative;
+}
+.navbar > ul > li {
+  margin-left: 5px;
+}
+.navbar a, .navbar a:focus {
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 15px 24px 15px;
+  font-size: 14px;
+  color: #fff;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+.navbar a i, .navbar a:focus i {
+  font-size: 12px;
+  line-height: 0;
+  margin-left: 5px;
+}
+.navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
+  background: #1B998B;
+  color: #fff;
+}
+
+
+/**
+* Mobile Navigation 
+*/
+.mobile-nav-toggle {
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+  line-height: 0;
+  transition: 0.5s;
+}
+.mobile-nav-toggle.bi-x {
+  color: #1B998B;
+}
+
+@media (max-width: 991px) {
+  .mobile-nav-toggle {
+    display: block;
+  }
+
+  .navbar ul {
+    display: none;
+  }
+}
+.navbar-mobile {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  transition: 0.3s;
+  z-index: 999;
+}
+.navbar-mobile .mobile-nav-toggle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+.navbar-mobile ul {
+  display: block;
+  position: absolute;
+  top: 55px;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  padding: 10px 0;
+  background-color: #fff;
+  overflow-y: auto;
+  transition: 0.3s;
+}
+.navbar-mobile a, .navbar-mobile a:focus {
+  padding: 10px 20px;
+  font-size: 15px;
+  color: #0E1116;
+}
+.navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover > a {
+  color: #1B998B;
+  background: none;
+}
+.navbar-mobile .getstarted, .navbar-mobile .getstarted:focus {
+  margin: 15px;
+}
+.navbar-mobile .dropdown ul {
+  position: static;
+  display: none;
+  margin: 10px 20px;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 1;
+  visibility: visible;
+  background: #fff;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+}
+.navbar-mobile .dropdown ul li {
+  min-width: 200px;
+}
+.navbar-mobile .dropdown ul a {
+  padding: 10px 20px;
+}
+.navbar-mobile .dropdown ul a i {
+  font-size: 12px;
+}
+.navbar-mobile .dropdown ul a:hover, .navbar-mobile .dropdown ul .active:hover, .navbar-mobile .dropdown ul li:hover > a {
+  color: #1B998B;
+}
+.navbar-mobile .dropdown > .dropdown-active {
+  display: block;
+}
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#hero {
+  width: 100%;
+  height: calc(100vh - -110px);
+  background: url("../img/hero-bg.png") top center;
+  background-size: cover;
+  position: relative;
+}
+#hero:before {
+  content: "";
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+#hero h1 {
+  margin: 0 0 20px 0;
+  font-size: 57px;
+  font-weight: 700;
+  line-height: 48px;
+  color: #fff;
+  width: 630px;
+  text-align: center;
+  
+}
+#hero h2 {
+  color: #eee;
+  margin-bottom: 30px;
+  font-size: 24px;
+  width: 630px;
+  text-align: center;
+
+}
+#hero .btn-get-started {
+  font-family: 'Spartan', sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  padding: 10px 28px;
+  transition: 0.3s;
+  border: 2px solid #fff;
+  color: #fff;
+}
+#hero .btn-get-started:hover {
+  background: #1B998B;
+  border-color: #1B998B;
+}
+@media (min-width: 991px) {
+  #hero {
+    background-attachment: fixed;
+    
+  }
+}
+@media (max-width: 991px) {
+  #hero {
+    text-align: center;
+  }
+  #hero .container {
+    padding-top: 15px;
+  }
+
+  
+  #hero h1 {
+    font-size: 28px;
+    line-height: 36px;
+    margin: auto;
+    text-align: center;
+
+  }
+  #hero h2 {
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 30px;
+    margin: auto;
+    text-align: center;
+ 
+  }
+}
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+  padding: 100px 0;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 991px){
+    section {
+        padding: 0px 0;
+    }
+}
+
+.section-title {
+  text-align: center;
+  padding: 30px 0;
+  position: relative;
+}
+.section-title h2 {
+  font-size: 32px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 0;
+  color: #0E1116;
+  position: relative;
+  z-index: 2;
+}
+.section-title span {
+  position: absolute;
+  top: 30px;
+  color: #d5efed;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  font-weight: 700;
+  font-size: 52px;
+  text-transform: uppercase;
+  line-height: 0;
+}
+.section-title p {
+  margin-bottom: 0;
+  position: relative;
+  z-index: 2;
+}
+@media (max-width: 575px) {
+  .section-title h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+  .section-title span {
+    font-size: 38px;
+  }
+}
+
+/*--------------------------------------------------------------
+# About
+--------------------------------------------------------------*/
+.about .content h3 {
+  font-weight: 600;
+  font-size: 26px;
+  text-align: center;
+}
+.about .content ul {
+  list-style: none;
+  padding: 0;
+}
+.about .content ul li {
+  padding-bottom: 10px;
+}
+.about .content ul i {
+  font-size: 20px;
+  padding-right: 4px;
+  color: #1B998B;
+}
+.about .content p:last-child {
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# Why Us
+--------------------------------------------------------------*/
+.why-us {
+  padding-top: 10px;
+}
+
+.why-us h4 {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 24px;
+  color: #0E1116;
+}
+
+.why .pic {
+  text-align: center;
+  margin-bottom: 20px;
+  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
+  padding: 30px 20px;
+  background: #fff;
+}
+.why .pic img {
+  max-width: 50%;
+  margin: 0 0 30px 0;
+}
+
+
+
+/*--------------------------------------------------------------
+# Services
+--------------------------------------------------------------*/
+.services .icon-box {
+  text-align: center;
+  padding: 80px 20px;
+  transition: all ease-in-out 0.3s;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+.services .icon-box .icon {
+  margin: 0 auto;
+  height: 64px;
+  background: #1B998B;
+  transition: all 0.3s ease-out 0s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transform-style: preserve-3d;
+}
+.services .icon-box .icon i {
+  color: #fff;
+  font-size: 28px;
+}
+
+.services .icon-box h4 {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+.services .icon-box h4 a {
+  color: #0E1116;
+}
+.services .icon-box p {
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+.services .icon-box:hover {
+  background: #1B998B;
+  border-color: #1B998B;
+  padding: 70px 20px 90px 20px;
+}
+.services .icon-box:hover .icon {
+  background: #fff;
+}
+.services .icon-box:hover .icon i {
+  color: #1B998B;
+}
+.services .icon-box:hover .icon::before {
+  background: #e82d2d;
+}
+.services .icon-box:hover h4 a, .services .icon-box:hover p {
+  color: #fff;
+}
+.services .icon-box:hover h4 #price  {
+  color: #fff;
+}
+
+.services .icon-box:hover h5 a, .services .icon-box:hover p {
+  color: #fff;
+}
+
+/*--------------------------------------------------------------
+# CTA
+--------------------------------------------------------------*/
+.cta {
+  background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../img/cta-bg.png") fixed center center;
+  background-size: cover;
+  padding: 120px 0;
+}
+.cta h3 {
+  color: #fff;
+  font-size: 28px;
+  font-weight: 700;
+}
+.cta p {
+  color: #fff;
+}
+.cta .cta-btn {
+  font-family: 'Spartan', sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 28px;
+  transition: 0.5s;
+  margin-top: 10px;
+  border: 2px solid #fff;
+  color: #fff;
+}
+.cta .cta-btn:hover {
+  background: #1B998B;
+  border: 2px solid #1B998B;
+}
+
+
+/*--------------------------------------------------------------
+# Contact
+--------------------------------------------------------------*/
+.contact .info-box {
+  color: #444444;
+  text-align: center;
+  padding: 20px 0 30px 0;
+}
+.contact .info-box i {
+  font-size: 50px;
+  color: #1B998B;
+  padding: 10px;
+}
+.contact .info-box {
+  color: #444444;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
+  padding: 20px 0 30px 0;
+}
+
+.contact .info-box h3 {
+  font-size: 20px;
+  color: #777777;
+  font-weight: 700;
+  margin: 10px 0;
+}
+.contact .info-box p {
+  padding: 0;
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+.contact .php-email-form {
+  padding: 30px;
+  right: 0px;
+
+}
+.contact .php-email-form .error-message {
+  display: none;
+  color: #fff;
+  background: #ed3c0d;
+  text-align: left;
+  padding: 15px;
+  font-weight: 600;
+}
+.contact .php-email-form .error-message br + br {
+  margin-top: 25px;
+}
+.contact .php-email-form .sent-message {
+  display: none;
+  color: #fff;
+  background: #18d26e;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+}
+.contact .php-email-form .loading {
+  display: none;
+  background: #fff;
+  text-align: center;
+  padding: 15px;
+}
+.contact .php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #18d26e;
+  border-top-color: #eee;
+  -webkit-animation: animate-loading 1s linear infinite;
+  animation: animate-loading 1s linear infinite;
+}
+.contact .php-email-form input, .contact .php-email-form textarea {
+  box-shadow: none;
+  font-size: 14px;
+}
+.contact .php-email-form input::focus, .contact .php-email-form textarea::focus {
+  background-color: #cc1616;
+}
+.contact .php-email-form input {
+  padding: 10px 15px;
+}
+.contact .php-email-form textarea {
+  padding: 12px 15px;
+}
+.contact .php-email-form button[type=submit] {
+  background: #931021;
+  border: 0;
+  padding: 10px 24px;
+  color: #fff;
+  transition: 0.4s;
+}
+.contact .php-email-form button[type=submit]:hover {
+  background: #b62121;
+}
+@-webkit-keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#footer {
+  background: #0c0c0c;
+  padding: 0 0 30px 0;
+  color: #fff;
+  font-size: 14px;
+}
+#footer .footer-top {
+  padding: 50px 0 15px 0;
+}
+#footer .footer-top .footer-info {
+  margin-bottom: 15px;
+  color: #fff;
+  border-top: 4px solid #931021;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+#footer .footer-top .social-links a {
+  font-size: 18px;
+  display: inline-block;
+  background: #262626;
+  color: #fff;
+  line-height: 1;
+  padding: 8px 0;
+  margin-right: 4px;
+  border-radius: 50%;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+}
+#footer .footer-top .social-links a:hover {
+  background: #1B998B;
+  color: #fff;
+  text-decoration: none;
+}
+
+#footer .copyright {
+  border-top: 1px solid #262626;
+  text-align: center;
+  padding-top: 30px;
+}
+
+@media (max-width: 575px) {
+  #footer .footer-top .footer-info {
+    margin: -20px 0 30px 0;
+  }
+}
