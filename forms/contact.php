@@ -18,13 +18,6 @@
   $contact->subject = $_POST['subject'];
 
 
-  $contact->smtp = array(
-    'host' => 'smtp.mail.ru',
-    'username' => 'ivan-i99@inbox.ru',
-    'password' => 'P4Yywze6#nZdQR',
-    'port' => '465'
-  );
-
 
   $contact->add_message( $_POST['name'], 'From');
   $contact->add_message( $_POST['email'], 'Email');
