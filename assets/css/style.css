@@ -738,27 +738,27 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Why Us
+# Projects
 --------------------------------------------------------------*/
-.why-us {
+.projects {
   padding-top: 10px;
 }
 
-.why-us h4 {
+.projects h4 {
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 24px;
   color: #0E1116;
 }
 
-.why .pic {
+.proj .pic {
   text-align: center;
   margin-bottom: 20px;
   box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
   padding: 30px 20px;
   background: #fff;
 }
-.why .pic img {
+.proj .pic img {
   max-width: 50%;
   margin: 0 0 30px 0;
 }
@@ -766,15 +766,15 @@ section {
 
 
 /*--------------------------------------------------------------
-# Services
+# Skills
 --------------------------------------------------------------*/
-.services .icon-box {
+.skills .icon-box {
   text-align: center;
   padding: 80px 20px;
   transition: all ease-in-out 0.3s;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
 }
-.services .icon-box .icon {
+.skills .icon-box .icon {
   margin: 0 auto;
   height: 64px;
   background: #1B998B;
@@ -785,46 +785,46 @@ section {
   margin-bottom: 20px;
   transform-style: preserve-3d;
 }
-.services .icon-box .icon i {
+.skills .icon-box .icon i {
   color: #fff;
   font-size: 28px;
 }
 
-.services .icon-box h4 {
+.skills .icon-box h4 {
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 24px;
 }
-.services .icon-box h4 a {
+.skills .icon-box h4 a {
   color: #0E1116;
 }
-.services .icon-box p {
+.skills .icon-box p {
   line-height: 24px;
   font-size: 14px;
   margin-bottom: 0;
 }
-.services .icon-box:hover {
+.skills .icon-box:hover {
   background: #1B998B;
   border-color: #1B998B;
   padding: 70px 20px 90px 20px;
 }
-.services .icon-box:hover .icon {
+.skills .icon-box:hover .icon {
   background: #fff;
 }
-.services .icon-box:hover .icon i {
+.skills .icon-box:hover .icon i {
   color: #1B998B;
 }
-.services .icon-box:hover .icon::before {
+.skills .icon-box:hover .icon::before {
   background: #e82d2d;
 }
-.services .icon-box:hover h4 a, .services .icon-box:hover p {
+.skills .icon-box:hover h4 a, .skills .icon-box:hover p {
   color: #fff;
 }
-.services .icon-box:hover h4 #price  {
+.skills .icon-box:hover h4 #price  {
   color: #fff;
 }
 
-.services .icon-box:hover h5 a, .services .icon-box:hover p {
+.skills .icon-box:hover h5 a, .skills .icon-box:hover p {
   color: #fff;
 }
 
