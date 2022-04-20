@@ -1,8 +1,8 @@
 const myTags = [
     'JavaScript', 'CSS', 'HTML5',
-    'PhotoShop', 'Illustrate', 'PHP',
+    'PhotoShop', 'Illustrator', 'PHP',
     'Figma', 'Oracle SQL', 'UI / UX',
-    'BASH', 'IDA',
+    'BASH', 'IDA', "MySQL"
 ];
 
 var tagCloud = TagCloud('.content', myTags,{
